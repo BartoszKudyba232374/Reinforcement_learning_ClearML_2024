@@ -21,7 +21,7 @@ task.set_base_docker('deanis/2023y2b-rl:latest')
 # setting the task to run remotely on the default queue
 task.execute_remotely(queue_name="default")
 
-# os.environ['WANDB_API_KEY'] = 'INSERT_API_KEY_HERE'
+os.environ['WANDB_API_KEY'] = '47f4fed852265faa4acb02db524138518171f840'
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--learning_rate", type=float, default=0.0003)
