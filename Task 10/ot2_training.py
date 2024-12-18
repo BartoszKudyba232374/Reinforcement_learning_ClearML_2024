@@ -69,24 +69,3 @@ for i in range(config['total_timesteps']//config['save_freq']):
                 tb_log_name=f'runs/Rl_test_{run.id}',
                 reset_num_timesteps=False)
     model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
-
-
-test_env = WrappedEnv(render=True, max_step=config['n_steps_max'])
-
-for episode in range(10):
-    obs, _ = test_env.reset()
-    done = False
-    step = 0
-
-    while not done:
-        # Take a random action from the environment's action space
-        action, _ = model.predict(obs)
-        obs, reward, terminated, truncated, info = env.step(action)
-
-        print(f"Episode: {episode + 1}, Step: {step + 1}, Action: {action}, Reward: {reward}")
-
-        step += 1
-        done = truncated or terminated
-        if done:
-            print(f"Episode finished after {step} steps. Info: {info}")
-            break
