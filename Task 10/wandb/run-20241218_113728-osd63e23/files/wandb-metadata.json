@@ -1,0 +1,44 @@
+{
+  "os": "macOS-15.1.1-arm64-arm-64bit",
+  "python": "CPython 3.8.18",
+  "startedAt": "2024-12-18T10:37:28.204799Z",
+  "program": "ot2_training.py",
+  "codePath": "Task 10/ot2_training.py",
+  "git": {
+    "remote": "https://github.com/BredaUniversityADSAI/2024-25b-fai2-adsai-BartoszKudyba232374.git",
+    "commit": "c23bc4a3aa7c57c2cfd04a1ca48c3b77870fd3a6"
+  },
+  "email": "paean-banana.0l@icloud.com",
+  "root": "/Users/bartoszkudyba/BUAS/Y2/2024-25b-fai2-adsai-BartoszKudyba232374/Task 10",
+  "host": "MacBook-Pro-Bartosz.local",
+  "username": "bartoszkudyba",
+  "executable": "/opt/anaconda3/envs/block_b2/bin/python",
+  "codePathLocal": "ot2_training.py",
+  "cpu_count": 14,
+  "cpu_count_logical": 14,
+  "disk": {
+    "/": {
+      "total": "994662584320",
+      "used": "237176586240"
+    },
+    "/System/Volumes/Data": {
+      "total": "994662584320",
+      "used": "237176586240"
+    }
+  },
+  "memory": {
+    "total": "38654705664"
+  },
+  "cpu": {
+    "count": 14,
+    "countLogical": 14
+  },
+  "apple": {
+    "name": "Apple M3 Max",
+    "ecpuCores": 4,
+    "pcpuCores": 10,
+    "gpuCores": 30,
+    "memoryGb": 36,
+    "ramTotalBytes": "38654705664"
+  }
+}

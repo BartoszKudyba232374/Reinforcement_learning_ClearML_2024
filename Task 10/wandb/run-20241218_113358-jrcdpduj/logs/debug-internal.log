@@ -1,0 +1,14 @@
+{"time":"2024-12-18T11:33:58.378885+01:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2024-12-18T11:33:58.378917+01:00","level":"INFO","msg":"created symlink","path":"/Users/bartoszkudyba/BUAS/Y2/2024-25b-fai2-adsai-BartoszKudyba232374/Task 10/wandb/run-20241218_113358-jrcdpduj/logs/debug-core.log"}
+{"time":"2024-12-18T11:33:58.486651+01:00","level":"INFO","msg":"created new stream","id":"jrcdpduj"}
+{"time":"2024-12-18T11:33:58.486694+01:00","level":"INFO","msg":"stream: started","id":"jrcdpduj"}
+{"time":"2024-12-18T11:33:58.4867+01:00","level":"INFO","msg":"handler: started","stream_id":"jrcdpduj"}
+{"time":"2024-12-18T11:33:58.486717+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"jrcdpduj"}
+{"time":"2024-12-18T11:33:58.486718+01:00","level":"INFO","msg":"sender: started","stream_id":"jrcdpduj"}
+{"time":"2024-12-18T11:33:58.70764+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-18T11:33:59.299738+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2024-12-18T11:33:59.310865+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2024-12-18T11:34:09.313478+01:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-12-18T11:34:24.309916+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2024-12-18T11:34:24.876885+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2024-12-18T11:34:24.878164+01:00","level":"INFO","msg":"Pausing system monitor"}
