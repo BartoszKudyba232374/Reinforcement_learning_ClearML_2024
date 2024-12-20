@@ -4,14 +4,14 @@ import wandb
 from ot2_env_wrapper import WrappedEnv
 from stable_baselines3 import PPO
 from wandb.integration.sb3 import WandbCallback
-from clearml import Task
+from clearml
 
 
 # Use the appropriate project name and task name (if you are in the first group in Dean's mentor group, use the project name 'Mentor Group D/Group 1')
 # It can also be helpful to include the hyperparameters in the task name
 
 # task = Task.init(project_name='Mentor Group S/Group 1', task_name='Experiment1')
-task = Task.init(project_name='Mentor Group S/Bartosz Kudyba', task_name='Experiment-test')
+task = clearml.Task.init(project_name='Mentor Group S/Bartosz Kudyba', task_name='Experiment-test')
 # copy these lines exactly as they are
 # setting the base docker image
 
@@ -20,6 +20,7 @@ task = Task.init(project_name='Mentor Group S/Bartosz Kudyba', task_name='Experi
 task.set_base_docker('deanis/2023y2b-rl:latest')
 # setting the task to run remotely on the default queue
 task.execute_remotely(queue_name="default")
+
 
 os.environ['WANDB_API_KEY'] = '47f4fed852265faa4acb02db524138518171f840'
 
