@@ -86,23 +86,23 @@ cb = WandbCallback()
 
     
     
-# model.learn(total_timesteps=config['total_timesteps'],
-#             callback=[cb, ClearMLCallback()])
+model.learn(total_timesteps=config['total_timesteps'],
+            callback=[cb, ClearMLCallback()])
 
 
 
-for i in range(config['total_timesteps']//config['save_freq']):
-    model.learn(total_timesteps=config['save_freq'],
-                callback=[cb, ClearMLCallback()],
-                reset_num_timesteps=False)
-    model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
+# for i in range(config['total_timesteps']//config['save_freq']):
+#     model.learn(total_timesteps=config['save_freq'],
+#                 callback=[cb, ClearMLCallback()],
+#                 reset_num_timesteps=False)
+#     model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
     
-    clearml.Logger.current_logger().report_scalar(
-        title='Training Progress',
-        series='Iteration',
-        value=i + 1,
-        iteration=config['save_freq'] * (i + 1)
-    )
+#     clearml.Logger.current_logger().report_scalar(
+#         title='Training Progress',
+#         series='Iteration',
+#         value=i + 1,
+#         iteration=config['save_freq'] * (i + 1)
+    # )
     # wandb.log({
     #     'Iteration': i + 1,
     #     'Timesteps': config['save_freq'] * (i + 1)
