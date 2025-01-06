@@ -148,7 +148,7 @@ task.set_base_docker('deanis/2023y2b-rl:latest')
 task.execute_remotely(queue_name="default")
 
 os.environ['WANDB_API_KEY'] = '47f4fed852265faa4acb02db524138518171f840'
-
+print(1)
 parser = argparse.ArgumentParser()
 parser.add_argument("--learning_rate", type=float, default=0.0003)
 parser.add_argument("--batch_size_multiple", type=float, default=0.05)
@@ -157,7 +157,7 @@ parser.add_argument("--n_epochs", type=int, default=10)
 parser.add_argument("--clip_range", type=float, default=0.2)
 parser.add_argument("--total_timesteps", type=int, default=1000000)
 args = parser.parse_args()
-
+print(2)
 config = dict(
     total_timesteps=args.total_timesteps,
     policy='MlpPolicy',
@@ -170,14 +170,14 @@ config = dict(
     n_epochs=args.n_epochs,
     clip_range=args.clip_range
 )
-
+print(3)
 run = wandb.init(project='OT2_RL_test',
                  config=config,
                  sync_tensorboard=True)
-
+print(4)
 env = WrappedEnv(render=False,
                  max_step=config['n_steps_max'])
-
+print(5)
 model = PPO(policy='MlpPolicy',
             env=env,
             device=config['device'],
@@ -186,12 +186,12 @@ model = PPO(policy='MlpPolicy',
             batch_size=int(args.n_steps*args.batch_size_multiple),
             n_steps=args.n_steps,
             n_epochs=args.n_epochs,
-            clip_range=config['clip_range'])
+            clip_range=args.clip_range)
 
 cb = WandbCallback(model_save_freq=config['save_freq'],
                    model_save_path=f'models/RL_test/model_{run.id}')
 
-
+print(6)
 for i in range(config['total_timesteps']//config['save_freq']):
     model.learn(total_timesteps=config['save_freq'],
                 progress_bar=True,
@@ -199,3 +199,4 @@ for i in range(config['total_timesteps']//config['save_freq']):
                 tb_log_name=f'runs/Rl_test_{run.id}',
                 reset_num_timesteps=False)
     model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
+    print(7)
