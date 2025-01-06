@@ -78,8 +78,7 @@ model = PPO(policy='MlpPolicy',
             device=config['device'],
             learning_rate=config['learning_rate'],
             batch_size=config['batch_size'],
-            n_steps=config['n_steps'],
-            n_epochs=config['n_epochs'])
+            n_steps=config['n_steps'])
 
 cb = WandbCallback()
 
