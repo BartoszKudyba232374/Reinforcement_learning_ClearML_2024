@@ -66,14 +66,15 @@ model = PPO(policy='MlpPolicy',
 cb = WandbCallback(model_save_freq=config['save_freq'],
                    model_save_path=f'models/RL_test/model_{run.id}')
 
-
-for i in range(config['total_timesteps']//config['save_freq']):
-    model.learn(total_timesteps=config['save_freq'],
-                progress_bar=True,
-                callback=cb,
-                tb_log_name=f'runs/Rl_test_{run.id}',
-                reset_num_timesteps=False)
-    model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
+model.learn(total_timesteps=config['total_timesteps'],
+            callback=cb)
+# for i in range(config['total_timesteps']//config['save_freq']):
+#     model.learn(total_timesteps=config['save_freq'],
+#                 progress_bar=True,
+#                 callback=cb,
+#                 tb_log_name=f'runs/Rl_test_{run.id}',
+#                 reset_num_timesteps=False)
+#     model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
     
     # clearml.Logger.current_logger().report_scalar(
     #     title='Training Progress',
