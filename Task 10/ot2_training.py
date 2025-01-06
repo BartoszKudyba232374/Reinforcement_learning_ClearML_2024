@@ -234,10 +234,11 @@ parser.add_argument("--batch_size_multiple", type=float, default=0.05)
 parser.add_argument("--n_steps", type=int, default=1000)
 parser.add_argument("--n_epochs", type=int, default=10)
 parser.add_argument("--clip_range", type=float, default=0.2)
+parser.add_argument("--total_timesteps", type=int, default=1000000)
 args = parser.parse_args()
 
 config = dict(
-    total_timesteps=100000,
+    total_timesteps=args.total_timesteps,
     policy='MlpPolicy',
     n_steps_max=1000,
     device='cpu',
