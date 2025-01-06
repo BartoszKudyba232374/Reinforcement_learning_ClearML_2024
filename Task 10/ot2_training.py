@@ -78,7 +78,6 @@ env = WrappedEnv(render=False,
 model = PPO(policy='MlpPolicy',
             env=env,
             device=config['device'],
-            tensorboard_log=f'runs/Rl_test_{run.id}',
             learning_rate=config['learning_rate'],
             batch_size=config['batch_size'],
             n_steps=config['n_steps'],
@@ -97,9 +96,7 @@ cb = WandbCallback(model_save_freq=config['save_freq'],
 
 for i in range(config['total_timesteps']//config['save_freq']):
     model.learn(total_timesteps=config['save_freq'],
-                progress_bar=True,
                 callback=[cb, ClearMLCallback()],
-                tb_log_name=f'runs/Rl_test_{run.id}',
                 reset_num_timesteps=False)
     model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
     
