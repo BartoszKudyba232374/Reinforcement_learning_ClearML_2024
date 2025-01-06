@@ -67,36 +67,40 @@ model = PPO(policy='MlpPolicy',
 cb = WandbCallback(model_save_freq=config['save_freq'],
                    model_save_path=f'models/RL_test/model_{run.id}')
 # Custom ClearML logging callback
-class ClearMLCallback(BaseCallback):
-    """
-    A custom callback for logging training metrics to ClearML.
-    """
-    def __init__(self, verbose=0):
-        super(ClearMLCallback, self).__init__(verbose)
+# class ClearMLCallback(BaseCallback):
+#     """
+#     A custom callback for logging training metrics to ClearML.
+#     """
+#     def __init__(self, verbose=0):
+#         super(ClearMLCallback, self).__init__(verbose)
     
-    def _on_step(self) -> bool:
-        # Log training metrics at each timestep
-        if self.n_calls % config['save_freq'] == 0:  # Log every 1000 timesteps
-            mean_reward = self.locals["infos"][0].get("episode", {}).get("r", 0)
-            total_timesteps = self.num_timesteps
+#     def _on_step(self) -> bool:
+#         # Log training metrics at each timestep
+#         if self.n_calls % config['save_freq'] == 0:  # Log every 1000 timesteps
+#             mean_reward = self.locals["infos"][0].get("episode", {}).get("r", 0)
+#             total_timesteps = self.num_timesteps
         
-            # Log additional custom metrics
-            episode_length = self.locals["infos"][0].get("episode", {}).get("l", 0)
-            self.logger.record("reward/mean_reward", mean_reward)
-            self.logger.record("time/total_timesteps", total_timesteps)
-            self.logger.record("episode/length", episode_length)
-        return True
+#             # Log additional custom metrics
+#             episode_length = self.locals["infos"][0].get("episode", {}).get("l", 0)
+#             self.logger.record("reward/mean_reward", mean_reward)
+#             self.logger.record("time/total_timesteps", total_timesteps)
+#             self.logger.record("episode/length", episode_length)
+#         return True
     
     
-model.learn(total_timesteps=config['total_timesteps'],
-            callback=[cb, ClearMLCallback()])
-# for i in range(config['total_timesteps']//config['save_freq']):
-#     model.learn(total_timesteps=config['save_freq'],
-#                 progress_bar=True,
-#                 callback=cb,
-#                 tb_log_name=f'runs/Rl_test_{run.id}',
-#                 reset_num_timesteps=False)
-#     model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
+# model.learn(total_timesteps=config['total_timesteps'],
+#             callback=[cb, ClearMLCallback()])
+
+
+
+for i in range(config['total_timesteps']//config['save_freq']):
+    model.learn(total_timesteps=config['save_freq'],
+                progress_bar=True,
+                callback=cb,
+                log_interval=1,
+                tb_log_name=f'runs/Rl_test_{run.id}',
+                reset_num_timesteps=False)
+    model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
     
 #     clearml.Logger.current_logger().report_scalar(
 #         title='Training Progress',
