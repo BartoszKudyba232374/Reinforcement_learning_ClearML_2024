@@ -233,7 +233,7 @@ parser.add_argument("--learning_rate", type=float, default=0.0003)
 parser.add_argument("--batch_size_multiple", type=float, default=0.05)
 parser.add_argument("--n_steps", type=int, default=1000)
 parser.add_argument("--n_epochs", type=int, default=10)
-parser.add_argument("--clip_range", type=float, default=0.2)
+# parser.add_argument("--clip_range", type=float, default=0.2)
 args = parser.parse_args()
 
 config = dict(
@@ -245,8 +245,8 @@ config = dict(
     learning_rate=args.learning_rate,
     batch_size=int(args.n_steps*args.batch_size_multiple),
     n_steps=args.n_steps,
-    n_epochs=args.n_epochs,
-    clip_range=args.clip_range
+    n_epochs=args.n_epochs
+    # clip_range=args.clip_range
 )
 
 run = wandb.init(project='OT2_RL_test',
@@ -263,8 +263,9 @@ model = PPO(policy='MlpPolicy',
             learning_rate=args.learning_rate,
             batch_size=int(args.n_steps*args.batch_size_multiple),
             n_steps=args.n_steps,
-            n_epochs=args.n_epochs,
-            clip_range=config['clip_range'])
+            n_epochs=args.n_epochs
+            # clip_range=config['clip_range']
+            )
 print(3)
 cb = WandbCallback(model_save_freq=config['save_freq'],
                    model_save_path=f'models/RL_test/model_{run.id}')
