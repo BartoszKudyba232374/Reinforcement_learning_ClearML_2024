@@ -94,7 +94,7 @@ class WrappedEnv(gym.Env):
 
         terminated = False
         if reward > self.done_threshold:
-            reward += 10
+            reward += 100
 
             terminated = True
 
