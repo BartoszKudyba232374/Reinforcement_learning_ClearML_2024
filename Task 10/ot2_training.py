@@ -245,8 +245,8 @@ config = dict(
     learning_rate=args.learning_rate,
     batch_size=int(args.n_steps*args.batch_size_multiple),
     n_steps=args.n_steps,
-    n_epochs=args.n_epochs
-    # clip_range=args.clip_range
+    n_epochs=args.n_epochs,
+    clip_range=0.2
 )
 
 run = wandb.init(project='OT2_RL_test',
@@ -263,8 +263,8 @@ model = PPO(policy='MlpPolicy',
             learning_rate=args.learning_rate,
             batch_size=int(args.n_steps*args.batch_size_multiple),
             n_steps=args.n_steps,
-            n_epochs=args.n_epochs
-            # clip_range=config['clip_range']
+            n_epochs=args.n_epochs,
+            clip_range=config['clip_range']
             )
 print(3)
 cb = WandbCallback(model_save_freq=config['save_freq'],
