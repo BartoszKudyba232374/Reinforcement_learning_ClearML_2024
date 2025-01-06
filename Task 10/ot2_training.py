@@ -203,7 +203,6 @@
 
 
 
-
 import argparse
 import os
 import wandb
@@ -252,7 +251,8 @@ run = wandb.init(project='OT2_RL_test',
                  config=config,
                  sync_tensorboard=True)
 
-env = WrappedEnv(render=False)
+env = WrappedEnv(render=False,
+                 max_step=config['n_steps_max'])
 
 model = PPO(policy='MlpPolicy',
             env=env,

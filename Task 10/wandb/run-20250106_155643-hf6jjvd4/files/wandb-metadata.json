@@ -1,0 +1,45 @@
+{
+  "os": "macOS-15.2-arm64-arm-64bit",
+  "python": "CPython 3.8.18",
+  "startedAt": "2025-01-06T14:56:43.331020Z",
+  "program": "/Users/bartoszkudyba/BUAS/Y2/Reinforcement_learning_ClearML_2024/Task 10/exercise_sb3.ipynb",
+  "codePath": "Task 10/exercise_sb3.ipynb",
+  "git": {
+    "remote": "https://github.com/BartoszKudyba232374/Reinforcement_learning_ClearML_2024.git",
+    "commit": "927ba8b61620787771d314a2df3af88c8a08507b"
+  },
+  "email": "paean-banana.0l@icloud.com",
+  "root": "/Users/bartoszkudyba/BUAS/Y2/Reinforcement_learning_ClearML_2024/Task 10",
+  "host": "MacBook-Pro-Bartosz.local",
+  "username": "bartoszkudyba",
+  "executable": "/opt/anaconda3/envs/block_b2/bin/python",
+  "codePathLocal": "exercise_sb3.ipynb",
+  "cpu_count": 14,
+  "cpu_count_logical": 14,
+  "disk": {
+    "/": {
+      "total": "994662584320",
+      "used": "279684108288"
+    },
+    "/System/Volumes/Data": {
+      "total": "994662584320",
+      "used": "279684108288"
+    }
+  },
+  "memory": {
+    "total": "38654705664"
+  },
+  "cpu": {
+    "count": 14,
+    "countLogical": 14
+  },
+  "apple": {
+    "name": "Apple M3 Max",
+    "ecpuCores": 4,
+    "pcpuCores": 10,
+    "gpuCores": 30,
+    "memoryGb": 36,
+    "swapTotalBytes": "3221225472",
+    "ramTotalBytes": "38654705664"
+  }
+}

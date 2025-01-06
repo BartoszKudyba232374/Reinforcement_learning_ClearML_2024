@@ -1,0 +1,121 @@
+Using mps device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+/opt/anaconda3/envs/block_b2/lib/python3.8/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+Logging to runs/hf6jjvd4/PPO_1
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 21       |
+|    ep_rew_mean     | 21       |
+| time/              |          |
+|    fps             | 266      |
+|    iterations      | 1        |
+|    time_elapsed    | 7        |
+|    total_timesteps | 2048     |
+---------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 26.4        |
+|    ep_rew_mean          | 26.4        |
+| time/                   |             |
+|    fps                  | 219         |
+|    iterations           | 2           |
+|    time_elapsed         | 18          |
+|    total_timesteps      | 4096        |
+| train/                  |             |
+|    approx_kl            | 0.008162364 |
+|    clip_fraction        | 0.075       |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.687      |
+|    explained_variance   | -0.00511    |
+|    learning_rate        | 0.0003      |
+|    loss                 | 6.7         |
+|    n_updates            | 10          |
+|    policy_gradient_loss | -0.0102     |
+|    value_loss           | 49.8        |
+-----------------------------------------
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 34.9        |
+|    ep_rew_mean          | 34.9        |
+| time/                   |             |
+|    fps                  | 217         |
+|    iterations           | 3           |
+|    time_elapsed         | 28          |
+|    total_timesteps      | 6144        |
+| train/                  |             |
+|    approx_kl            | 0.009026605 |
+|    clip_fraction        | 0.0584      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -0.664      |
+|    explained_variance   | 0.0802      |
+|    learning_rate        | 0.0003      |
+|    loss                 | 16.9        |
+|    n_updates            | 20          |
+|    policy_gradient_loss | -0.0163     |
+|    value_loss           | 37.1        |
+-----------------------------------------
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 45.4       |
+|    ep_rew_mean          | 45.4       |
+| time/                   |            |
+|    fps                  | 214        |
+|    iterations           | 4          |
+|    time_elapsed         | 38         |
+|    total_timesteps      | 8192       |
+| train/                  |            |
+|    approx_kl            | 0.00821863 |
+|    clip_fraction        | 0.0853     |
+|    clip_range           | 0.2        |
+|    entropy_loss         | -0.631     |
+|    explained_variance   | 0.208      |
+|    learning_rate        | 0.0003     |
+|    loss                 | 19.6       |
+|    n_updates            | 30         |
+|    policy_gradient_loss | -0.0183    |
+|    value_loss           | 51.8       |
+----------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 58.7         |
+|    ep_rew_mean          | 58.7         |
+| time/                   |              |
+|    fps                  | 215          |
+|    iterations           | 5            |
+|    time_elapsed         | 47           |
+|    total_timesteps      | 10240        |
+| train/                  |              |
+|    approx_kl            | 0.0063692955 |
+|    clip_fraction        | 0.0499       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.617       |
+|    explained_variance   | 0.304        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 20.8         |
+|    n_updates            | 40           |
+|    policy_gradient_loss | -0.0148      |
+|    value_loss           | 52.2         |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 74.6         |
+|    ep_rew_mean          | 74.6         |
+| time/                   |              |
+|    fps                  | 215          |
+|    iterations           | 6            |
+|    time_elapsed         | 56           |
+|    total_timesteps      | 12288        |
+| train/                  |              |
+|    approx_kl            | 0.0068570217 |
+|    clip_fraction        | 0.081        |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -0.606       |
+|    explained_variance   | 0.538        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 13.6         |
+|    n_updates            | 50           |
+|    policy_gradient_loss | -0.0156      |
+|    value_loss           | 49.6         |
+------------------------------------------

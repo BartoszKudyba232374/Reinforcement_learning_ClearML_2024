@@ -1,0 +1,11 @@
+{"time":"2025-01-06T15:55:58.561886+01:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2025-01-06T15:55:58.561932+01:00","level":"INFO","msg":"created symlink","path":"/Users/bartoszkudyba/BUAS/Y2/Reinforcement_learning_ClearML_2024/Task 10/wandb/run-20250106_155558-0nagworj/logs/debug-core.log"}
+{"time":"2025-01-06T15:55:58.674661+01:00","level":"INFO","msg":"created new stream","id":"0nagworj"}
+{"time":"2025-01-06T15:55:58.674965+01:00","level":"INFO","msg":"stream: started","id":"0nagworj"}
+{"time":"2025-01-06T15:55:58.674977+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"0nagworj"}
+{"time":"2025-01-06T15:55:58.675008+01:00","level":"INFO","msg":"handler: started","stream_id":"0nagworj"}
+{"time":"2025-01-06T15:55:58.675008+01:00","level":"INFO","msg":"sender: started","stream_id":"0nagworj"}
+{"time":"2025-01-06T15:55:58.918412+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-06T15:55:59.521386+01:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2025-01-06T15:56:04.492684+01:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2025-01-06T15:56:14.496836+01:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
