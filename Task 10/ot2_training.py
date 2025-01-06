@@ -216,7 +216,7 @@ from clearml import Task
 # It can also be helpful to include the hyperparameters in the task name
 
 # task = Task.init(project_name='Mentor Group S/Group 1', task_name='Experiment1')
-task = Task.init(project_name='Mentor Group S/Bartosz Kudyba', task_name='Experiment-test')
+task = Task.init(project_name='Mentor Group S/Bartosz Kudyba', task_name='Experiment-RL')
 # copy these lines exactly as they are
 # setting the base docker image
 
@@ -246,16 +246,16 @@ config = dict(
     batch_size=int(args.n_steps*args.batch_size_multiple),
     n_steps=args.n_steps,
     n_epochs=args.n_epochs,
-    clip_range=0.2
+    clip_range=args.clip_range
 )
 
-run = wandb.init(project='OT2_RL_test',
+run = wandb.init(project='OT2_RL',
                  config=config,
                  sync_tensorboard=True)
-print(1)
+
 env = WrappedEnv(render=False,
                  max_step=config['n_steps_max'])
-print(2)
+
 model = PPO(policy='MlpPolicy',
             env=env,
             device=config['device'],
@@ -266,11 +266,11 @@ model = PPO(policy='MlpPolicy',
             n_epochs=args.n_epochs,
             clip_range=config['clip_range']
             )
-print(3)
+
 cb = WandbCallback(model_save_freq=config['save_freq'],
                    model_save_path=f'models/RL_test/model_{run.id}')
 
-print(4)
+
 for i in range(config['total_timesteps']//config['save_freq']):
     model.learn(total_timesteps=config['save_freq'],
                 progress_bar=True,
