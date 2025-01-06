@@ -20,8 +20,6 @@ class ClearMLCallback(BaseCallback):
         if self.n_calls % config['save_freq'] == 0:  # Log every 1000 timesteps
             mean_reward = self.locals["infos"][0].get("episode", {}).get("r", 0)
             total_timesteps = self.num_timesteps
-        
-            # Log additional custom metrics
             episode_length = self.locals["infos"][0].get("episode", {}).get("l", 0)
             self.logger.record("reward/mean_reward", mean_reward)
             self.logger.record("time/total_timesteps", total_timesteps)
@@ -83,8 +81,7 @@ model = PPO(policy='MlpPolicy',
             n_steps=config['n_steps'],
             n_epochs=config['n_epochs'])
 
-cb = WandbCallback(model_save_freq=config['save_freq'],
-                   model_save_path=f'models/RL_test/model_{run.id}')
+cb = WandbCallback(model_save_freq=config['save_freq'])
 
 
     
@@ -100,12 +97,12 @@ for i in range(config['total_timesteps']//config['save_freq']):
                 reset_num_timesteps=False)
     model.save(f"models/RL_test/run_{run.id}/step_{config['save_freq']*(i+1)}")
     
-#     clearml.Logger.current_logger().report_scalar(
-#         title='Training Progress',
-#         series='Iteration',
-#         value=i + 1,
-#         iteration=config['save_freq'] * (i + 1)
-#     )
+    clearml.Logger.current_logger().report_scalar(
+        title='Training Progress',
+        series='Iteration',
+        value=i + 1,
+        iteration=config['save_freq'] * (i + 1)
+    )
     # wandb.log({
     #     'Iteration': i + 1,
     #     'Timesteps': config['save_freq'] * (i + 1)
