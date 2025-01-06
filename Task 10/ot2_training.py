@@ -81,7 +81,7 @@ model = PPO(policy='MlpPolicy',
             n_steps=config['n_steps'],
             n_epochs=config['n_epochs'])
 
-cb = WandbCallback(model_save_freq=config['save_freq'])
+cb = WandbCallback()
 
 
     
