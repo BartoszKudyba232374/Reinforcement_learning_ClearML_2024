@@ -4,7 +4,7 @@ import wandb
 from ot2_env_wrapper import WrappedEnv
 from stable_baselines3 import PPO
 from wandb.integration.sb3 import WandbCallback
-# from stable_baselines3.common.callbacks import BaseCallback
+from stable_baselines3.common.callbacks import BaseCallback
 import clearml
 
 
