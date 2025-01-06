@@ -233,7 +233,7 @@ parser.add_argument("--learning_rate", type=float, default=0.0003)
 parser.add_argument("--batch_size_multiple", type=float, default=0.05)
 parser.add_argument("--n_steps", type=int, default=1000)
 parser.add_argument("--n_epochs", type=int, default=10)
-# parser.add_argument("--clip_range", type=float, default=0.2)
+parser.add_argument("--clip_range", type=float, default=0.2)
 args = parser.parse_args()
 
 config = dict(
